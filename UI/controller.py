@@ -7,6 +7,7 @@ class Controller:
         self._view = view
         # the model, which implements the logic of the program and holds the data
         self._model = model
+        self._corso = None
 
     def handle_hello(self, e):
         """Simple function to handle a button-pressed event,
@@ -17,3 +18,15 @@ class Controller:
             return
         self._view.txt_result.controls.append(ft.Text(f"Hello, {name}!"))
         self._view.update_page()
+
+    def _leggiDdCorso(self, e):
+        self._corso = self._view._ddCorso.value
+
+    def _cercaIscritti(self, e):
+        pass
+
+    def _cercaStudente(self, e):
+        pass
+
+    def _cercaCorsi(self, e):
+        pass
