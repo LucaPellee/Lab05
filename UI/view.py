@@ -30,17 +30,17 @@ class View(ft.UserControl):
         #ROW 1
         self._ddCorso = ft.Dropdown(
             label="Corso",
-            width = 200,
+            width = 500,
             hint_text="Selezionare il corso",
             on_change= self._controller._leggiDdCorso
         )
-        self._riempiDdCorsi()
+        self._controller._riempiDdCorsi()
         self._btnIscritti = ft.ElevatedButton(text = "Cerca iscritti", on_click= self._controller._cercaIscritti)
 
         row1 = ft.Row([self._ddCorso, self._btnIscritti], alignment= ft.MainAxisAlignment.CENTER)
 
         #ROW 2
-        self._tfMatr = ft.TextField(label = "matricola", width=300)
+        self._tfMatr = ft.TextField(label = "matricola", width=300, on_change= self._controller._leggiTfMatr)
         self._tfNome = ft.TextField(label = "Nome", width=200, read_only= True)
         self._tfCognome = ft.TextField(label = "Cognome", width = 200, read_only= True)
 
@@ -80,5 +80,3 @@ class View(ft.UserControl):
     def update(self):
         self._page.update()
 
-    def _riempiDdCorsi(self):
-        pass
